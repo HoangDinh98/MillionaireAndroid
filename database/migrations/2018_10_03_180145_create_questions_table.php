@@ -16,6 +16,7 @@ class CreateQuestionsTable extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('content')->default("Null");
+            $table->integer('level')->default(1);
             $table->string('correct_answer')->default("Null");
             $table->string('answer1', 255)->default("Null");
             $table->string('answer2', 255)->default("Null");

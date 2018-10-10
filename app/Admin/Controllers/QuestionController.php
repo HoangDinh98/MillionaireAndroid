@@ -83,6 +83,7 @@ class QuestionController extends Controller
 
         $grid->id('Id');
         $grid->content('Content');
+        $grid->level('Level');
         $grid->correct_answer('Correct answer');
         $grid->answer1('Answer1');
         $grid->answer2('Answer2');
@@ -105,6 +106,7 @@ class QuestionController extends Controller
 
         $show->id('Id');
         $show->content('Content');
+        $show->level('Level');
         $show->correct_answer('Correct answer');
         $show->answer1('Answer1');
         $show->answer2('Answer2');
@@ -125,6 +127,7 @@ class QuestionController extends Controller
         $form = new Form(new Question);
 
         $form->textarea('content', 'Content')->default('')->rules('required');
+        $form->number('level', 'Level')->default(1)->rules('required');
         $form->text('correct_answer', 'Correct answer')->default('')->rules('required');
         $form->text('answer1', 'Answer1')->default('')->rules('required');
         $form->text('answer2', 'Answer2')->default('')->rules('required');
